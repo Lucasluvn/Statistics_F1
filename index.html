@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard F1 - Estatísticas de Equipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <div class="monitor-frame">
+            <header class="dashboard-header">
+                <div class="logo-area">
+                    <img src="f1-logo-placeholder.png" alt="F1 Logo" class="f1-logo">
+                </div>
+                <div class="title-area">
+                    <h1>HUB DE ESTATÍSTICAS DE EQUIPES F1</h1>
+                </div>
+                <div class="top-nav">
+                    <!-- Outros links, se necessário -->
+                </div>
+            </header>
+
+            <nav class="filters-panel">
+                <div class="filter-dropdown">
+                    <i class="fas fa-calendar-alt"></i>
+                    <select>
+                        <option value="2025">TEMPORADA 20253</option>
+                        <!-- Adicione outras temporadas aqui -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn active">
+                        <i class="fas fa-user-friends"></i>
+                        <span>PILOTOS</span>
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>CIRCUITOS</span>
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-trophy"></i>
+                        <span>VITÓRIAS</span>
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-medal"></i>
+                        <span>PÓDIOS</span>
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-building"></i>
+                        <span>CONSTRUTORES</span>
+                    </button>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>VOLTAR EQUIPE</span>
+                    </button>
+                    
+                    <div class="team-cards-viewport">
+                        <article class="team-card current">
+                            <div class="card-header">
+                                <div class="team-logos">
+                                    <img src="oracle-logo-placeholder.png" alt="Oracle Logo" class="sponsor-logo">
+                                    <img src="redbull-logo-placeholder.png" alt="Red Bull Logo" class="team-logo">
+                                </div>
+                                <h2>ORACLE RED BULL RACING</h2>
+                            </div>
+                            
+                            <div class="card-pilots">
+                                <div class="pilot">
+                                    <img src="assets/max.png" alt="Max Verstappen">
+                                    <h3>M. VERSTAPPEN</h3>
+                                </div>
+                                <div class="pilot">
+                                    <img src="perez-placeholder.png" alt="Sergio Pérez">
+                                    <h3>S. PÉREZ</h3>
+                                </div>
+                            </div>
+                            
+                            <div class="card-stats">
+                                <h3>CAMPEONATO DE CONSTRUTORES (P1)</h3>
+                                <div class="stat-grid">
+                                    <div class="stat-group">
+                                        <div class="stat"><span class="label">DOMINÂNCIA (P1)</span> <span class="value"></span></div>
+                                        <div class="stat"><span class="label">PONTOS (860)</span> <span class="value"></span></div>
+                                    </div>
+                                    <div class="stat-group">
+                                        <div class="stat"><span class="label">VITÓRIAS (21)</span> <span class="value"></span></div>
+                                        <div class="stat"><span class="label">PÓDIOS (30)</span> <span class="value"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="carousel-nav next">
+                        <span>PRÓXIMA EQUIPE</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="pagination">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
