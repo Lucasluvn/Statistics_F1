@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1 Statistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!--
+    Estrutura 100% visual — sem nenhuma lógica em JavaScript.
+    O script.js está incluído só como ponto de partida (comentado),
+    pra você escrever a lógica do carrossel por conta própria.
+  -->
+
+  <div class="page">
+    <div class="container">
+      <!-- Cabeçalho -->
+      <header class="header">
+        <div class="logo-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-red">
+            <circle cx="12" cy="12" r="8"></circle>
+            <path d="M12 2v4"></path>
+            <path d="m4.93 4.93 2.83 2.83"></path>
+            <path d="M2 12h4"></path>
+            <path d="m4.93 19.07 2.83-2.83"></path>
+            <path d="M12 18a2 2 0 0 0 2-2v-1a4 4 0 0 0-8 0v1a2 2 0 0 0 2 2Z"></path>
+          </svg>
+          <span class="logo-text"><span class="logo-f1">F1</span> STATISTICS</span>
+        </div>
+
+        <h1 class="title">HUB DE ESTATÍSTICAS — TEMPORADA 2025</h1>
+      </header>
+
+      <!-- Chips de equipe -->
+      <nav class="team-chips" aria-label="Equipes da temporada">
+        <button class="chip"><span class="chip-logo">R</span>Red Bull</button>
+        <button class="chip"><span class="chip-logo">F</span>Ferrari</button>
+        <button class="chip"><span class="chip-logo">M</span>Mercedes</button>
+        <button class="chip chip-active"><span class="chip-logo chip-logo-active">M</span>McLaren</button>
+        <button class="chip"><span class="chip-logo">A</span>Aston Martin</button>
+        <button class="chip"><span class="chip-logo">A</span>Alpine</button>
+        <button class="chip"><span class="chip-logo">W</span>Williams</button>
+        <button class="chip"><span class="chip-logo">R</span>RB</button>
+        <button class="chip"><span class="chip-logo">K</span>Kick Sauber</button>
+        <button class="chip"><span class="chip-logo">H</span>Haas</button>
+      </nav>
+
+      <!-- Carrossel -->
+      <div class="carousel">
+        <button class="nav-arrow" aria-label="Equipe anterior">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="card">
+          <div class="card-stripe"></div>
+
+          <div class="card-content">
+            <div class="card-top">
+              <div class="card-title-row">
+                <!-- Placeholder do logo da equipe — não é o logo oficial, ver nota no README -->
+                <div class="team-logo-placeholder" aria-label="Logo da equipe McLaren (placeholder)">MC</div>
+                <div>
+                  <span class="badge-example">Temporada 2025 · Dados de exemplo</span>
+                  <h2 class="team-name">McLaren F1 Team</h2>
+                </div>
+              </div>
+
+              <div class="metric-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>P1 · 714 pts</span>
+              </div>
+            </div>
+
+            <div class="car-placeholder" role="button" tabindex="0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"></path>
+                <circle cx="6.5" cy="16.5" r="2.5"></circle>
+                <circle cx="16.5" cy="16.5" r="2.5"></circle>
+              </svg>
+              <span>Imagem do carro — clique para ver os pilotos</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-arrow" aria-label="Próxima equipe">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot dot-active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

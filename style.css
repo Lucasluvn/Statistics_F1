@@ -1,0 +1,355 @@
+/* ===== Tokens ===== */
+:root {
+  --carbon: #0b0c0e;
+  --surface: #17181c;
+  --surface-alt: #121316;
+  --edge: #262830;
+
+  --ink: #f4f5f7;
+  --ink-muted: #9ba0ac;
+  --ink-faint: #6b6e77;
+
+  --racing-red: #ff1e3c;
+  --electric-teal: #00e5c7;
+
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--carbon);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* ===== Layout base ===== */
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  border: 1px solid var(--racing-red);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.icon-red {
+  color: var(--racing-red);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.logo-f1 {
+  color: var(--racing-red);
+}
+
+.title {
+  border: 1px solid var(--edge);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ===== Chips de equipe ===== */
+.team-chips {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge antigo */
+}
+
+.team-chips::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge novo */
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: var(--surface);
+  color: #b7bac1;
+  transition: background-color 0.2s ease;
+}
+
+.chip-active {
+  background-color: #ff8000;
+  color: #0b0c0e;
+}
+
+/* Placeholder do logo da equipe — círculo com inicial, não o logo oficial */
+.chip-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: #ff8000;
+  color: #0b0c0e;
+  font-size: 0.5625rem;
+  font-weight: 700;
+}
+
+.chip-logo-active {
+  background-color: #0b0c0e;
+  color: #ff8000;
+}
+
+/* ===== Carrossel ===== */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--edge);
+  background-color: var(--surface);
+  color: var(--ink-muted);
+  border-radius: 9999px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-arrow:hover {
+  color: var(--electric-teal);
+  border-color: var(--electric-teal);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  background-color: var(--surface);
+  border-radius: 1rem;
+  width: 100%;
+  height: 460px;
+}
+
+.card-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0.375rem;
+  background-color: #ff8000;
+}
+
+.card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Placeholder do logo da equipe no card — não é o logo oficial */
+.team-logo-placeholder {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px dashed #ff8000;
+  border-radius: 0.75rem;
+  color: #ff8000;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.badge-example {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--edge);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+}
+
+.team-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.metric-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  border: 1px solid rgb(0 229 199 / 30%);
+  background-color: rgb(0 229 199 / 10%);
+  color: var(--electric-teal);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.car-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 14rem;
+  border: 1px dashed var(--edge);
+  background-color: var(--surface-alt);
+  border-radius: 0.75rem;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.car-placeholder:hover {
+  color: var(--electric-teal);
+  border-color: var(--electric-teal);
+}
+
+.car-placeholder span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ===== Dots ===== */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  height: 0.375rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--edge);
+}
+
+.dot-active {
+  width: 1.375rem;
+  background-color: #ff8000;
+}
+
+/* ===== Responsivo ===== */
+@media (min-width: 640px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .title {
+    flex: 1;
+    font-size: 1.125rem;
+  }
+
+  .card {
+    height: 420px;
+  }
+
+  .card-content {
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+  }
+
+  .card-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .team-name {
+    font-size: 2.25rem;
+  }
+
+  .nav-arrow {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
