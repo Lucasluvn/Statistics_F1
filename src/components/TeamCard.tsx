@@ -1,5 +1,7 @@
-import { Car, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import type { F1Team } from "../data/teams";
+import { teamLogos } from "../data/logos";
+import {teamCars} from "../data/cars_f1"
 
 interface TeamCardProps {
   team: F1Team;
@@ -29,16 +31,19 @@ export default function TeamCard({ team }: TeamCardProps) {
           <div className="flex items-start gap-4">
             {/* Placeholder do logo da equipe — não é o logo oficial, ver nota no README */}
             <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-dashed text-sm font-bold sm:h-14 sm:w-14"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border text-sm font-bold sm:h-14 sm:w-14"
               style={{ borderColor: team.color, color: team.color }}
               aria-label={`Logo da equipe ${team.name} (placeholder)`}
             >
-              {team.name.slice(0, 2).toUpperCase()}
+              <img src={teamLogos[team.id]} 
+              className="h-full w-full object-contain"
+              alt= {`logo das equipes ${team.name}`}
+              />
             </div>
 
             <div>
               <span className="mb-2 inline-block rounded-full border border-edge px-3 py-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
-                Temporada 2025 · Dados de exemplo
+                Temporada 2025 
               </span>
               <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">
                 {team.fullName}
@@ -59,12 +64,15 @@ export default function TeamCard({ team }: TeamCardProps) {
         <div
           role="button"
           tabIndex={0}
-          className="flex h-56 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-edge bg-surface-alt text-ink-faint transition-colors hover:border-electric-teal hover:text-electric-teal sm:h-64"
+          className="flex h-56 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border border-edge bg-surface-alt text-ink-faint transition-colors hover:border-electric-teal hover:text-electric-teal sm:h-64"
         >
-          <Car size={28} />
-          <span className="font-body text-xs font-medium">
-            Imagem do carro — clique para ver os pilotos
-          </span>
+        
+        <img
+          src={teamCars[team.id]}
+          className="h-full w-full object-contain"
+           alt={`Carro da equipe ${team.name}`}
+/>
+          
         </div>
       </div>
     </div>

@@ -1,3 +1,6 @@
+import {teamLogos} from "../data/logos"
+
+
 // Dados de exemplo (temporada 2025) — os números são ilustrativos,
 // servem só para preencher o layout. Quando o back-end estiver pronto
 // e consumindo a API externa, esses dados reais virão de lá.
