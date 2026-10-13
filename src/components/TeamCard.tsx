@@ -64,12 +64,12 @@ export default function TeamCard({ team }: TeamCardProps) {
         <div
           role="button"
           tabIndex={0}
-          className="flex h-56 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border border-edge bg-surface-alt text-ink-faint transition-colors hover:border-electric-teal hover:text-electric-teal sm:h-64"
+          className="flex h-56 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border border-edge bg-surface-alt text-ink-faint transition-colors hover:border-electric-teal hover:text-electric-teal sm:h-64" 
         >
         
         <img
           src={teamCars[team.id]}
-          className="h-full w-full object-contain"
+         className="h-full w-full object-contain"
            alt={`Carro da equipe ${team.name}`}
 />
           
