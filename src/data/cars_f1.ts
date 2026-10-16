@@ -5,7 +5,7 @@ import car_Mercedes_f1 from "../assests/logo_f1/cars_f1/car_Mercedes_f1.png"
 import car_Mclaren_f1 from "../assests/logo_f1/cars_f1/car_Mclaren_f1.png"
 import car_Aston_Martin from "../assests/logo_f1/cars_f1/car_Aston_Martin.png"
 import car_Alpine_f1 from "../assests/logo_f1/cars_f1/car_Alpine_f1.png"
-import car_Hass from "../assests/logo_f1/cars_f1/car_Hass.png"
+import car_Haas from "../assests/logo_f1/cars_f1/car_Hass.png"
 import car_KickSauber from "../assests/logo_f1/cars_f1/car_KickSauber.png"
 import car_Racing_Bulls from "../assests/logo_f1/cars_f1/car_Racing_Bulls.png"
 
@@ -22,7 +22,7 @@ export const teamCars ={
   "mclaren": car_Mclaren_f1,
   "aston-martin": car_Aston_Martin,
   "alpine": car_Alpine_f1,
-  "hass": car_Hass,
+  "haas": car_Haas,
   "sauber":car_KickSauber,
   "rb":car_Racing_Bulls,
 }
