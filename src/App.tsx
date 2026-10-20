@@ -12,7 +12,7 @@ export default function App() {
 
 // Logica das setas de mudança de cards
 
-const [index,setIndex] = useState(3);
+const [index,setIndex] = useState(0);
 const currentTeam = teams[index]
 
 

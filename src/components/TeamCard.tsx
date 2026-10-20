@@ -31,8 +31,7 @@ export default function TeamCard({ team }: TeamCardProps) {
           <div className="flex items-start gap-4">
             {/* Placeholder do logo da equipe — não é o logo oficial, ver nota no README */}
             <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border text-sm font-bold sm:h-14 sm:w-14"
-              style={{ borderColor: team.color, color: team.color }}
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-sm font-bold sm:h-14 sm:w-14"
               aria-label={`Logo da equipe ${team.name} (placeholder)`}
             >
               <img src={teamLogos[team.id]} 

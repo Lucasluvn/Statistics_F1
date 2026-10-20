@@ -22,7 +22,7 @@ export const teamLogos = {
   "red-bull": redBullLogo,
   haas: haasLogo,
   sauber:kickSauberLogo,
-  Williams:williamsLogo,
+  williams:williamsLogo,
   rb:racingBulls,
 
 }
