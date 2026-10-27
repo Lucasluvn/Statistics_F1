@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import TeamNavChips from "./components/TeamNavChips";
 import NavArrow from "./components/NavArrow";
 import TeamCard from "./components/TeamCard";
-import { teams} from "./data/teams";
+import {teams} from "./data/teams";
 
 //Importando o Usestate
 import React,{useState} from 'react'
