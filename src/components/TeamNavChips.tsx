@@ -1,4 +1,5 @@
 import { teams} from "../data/teams";
+import { useEffect,useRef } from "react";
 
 interface TeamNavChipsProps {
 activeId: string
@@ -8,13 +9,27 @@ onChange: (id:string) => void
 /**
  * Fileira de chips com as 10 equipes da temporada.*/
 export default function TeamNavChips ({activeId,onChange })  {
+  /* uma ref pra guardar os botões*/
+const chipsRefs = useRef<Record<string,HTMLButtonElement | null>>({});
+/*  Criar o useEffect (o "efeito" do título") */
+
+useEffect(() => {
+  chipsRefs.current[activeId]?.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
+  });
+}, [activeId]);
+
   return (
     <div className="relative">
     <nav aria-label="Season Teams" className="no-scrollbar flex gap-2 overflow-x-auto pb-2">
       {teams.map((team) => {
         const isActive = team.id === activeId;
         return (
+          
           <button onClick={() => onChange(team.id)}
+           ref={(el) => { chipsRefs.current[team.id] = el; }}
             key={team.id}
             className="flex shrink-0 items-center gap-2 rounded-full px-3 py-2 font-body text-sm font-medium tracking-wide transition-colors"
             style={{
@@ -33,13 +48,18 @@ export default function TeamNavChips ({activeId,onChange })  {
               {team.name.slice(0, 1).toUpperCase()}
             </span>
             {team.name}
+           
+
           </button>
         );
       })}
     </nav>
-{/* div com o gradient no carrosel com o nome das equipes */}
-    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-carbon to-transparent z-10"></div>
-    <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-carbon to-transparent z-10"></div>
+
     </div>
   );
 }
+
+
+
+  
+
