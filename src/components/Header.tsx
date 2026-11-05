@@ -16,7 +16,7 @@ export default function Header() {
       </div>
 
       <h1 className="rounded-xl border border-edge px-6 py-2 text-center font-display text-base font-medium tracking-[0.08em] text-ink sm:flex-1 sm:text-lg">
-        HUB DE ESTATÍSTICAS — TEMPORADA 2025
+        STATISTICS HUB — 2025 SEASON 
       </h1>
     </header>
   );

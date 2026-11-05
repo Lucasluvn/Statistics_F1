@@ -1,8 +1,8 @@
 import { TrendingUp } from "lucide-react";
 import type { F1Team } from "../data/teams";
 import { teamLogos } from "../data/logos";
-import {teamCars} from "../data/cars_f1"
-
+import {teamCars} from "../data/cars_f1";
+import {useNavigate} from "react-router-dom";
 interface TeamCardProps {
   team: F1Team;
 }
@@ -17,6 +17,7 @@ interface TeamCardProps {
  * hover já preparados visualmente).
  */
 export default function TeamCard({ team }: TeamCardProps) {
+  const navigate = useNavigate();
   return (
     <div className="relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-edge bg-surface">
       {/* Faixa lateral com a cor da equipe */}
@@ -42,7 +43,7 @@ export default function TeamCard({ team }: TeamCardProps) {
 
             <div>
               <span className="mb-2 inline-block rounded-full border border-edge px-3 py-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
-                Temporada 2025 
+                2025 SEASON 
               </span>
               <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">
                 {team.fullName}
@@ -63,6 +64,7 @@ export default function TeamCard({ team }: TeamCardProps) {
         <div
           role="button"
           tabIndex={0}
+           onClick={() => navigate(`/times/${team.id}`)}
           className="flex h-56 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border border-edge bg-surface-alt text-ink-faint transition-colors hover:border-electric-teal hover:text-electric-teal sm:h-64" 
         >
         
@@ -71,7 +73,6 @@ export default function TeamCard({ team }: TeamCardProps) {
          className="h-full w-full object-contain"
            alt={`Carro da equipe ${team.name}`}
 />
-          
         </div>
       </div>
     </div>
