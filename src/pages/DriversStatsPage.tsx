@@ -8,6 +8,19 @@ interface Stat {
   value: string;
 }
 
+function ordinal(value: string): string {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return value;
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${n}th`;
+  switch (n % 10) {
+    case 1: return `${n}st`;
+    case 2: return `${n}nd`;
+    case 3: return `${n}rd`;
+    default: return `${n}th`;
+  }
+}
+
 function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) {
   const [failed, setFailed] = useState(false);
 
@@ -19,7 +32,7 @@ function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) 
       {driver.photo && !failed ? (
         <img
           src={driver.photo}
-          alt={`Foto de ${driver.name}`}
+          alt={`Photo of ${driver.name}`}
           className="h-full w-full object-cover object-top"
           onError={() => setFailed(true)}
         />
@@ -34,13 +47,13 @@ function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) 
 
 function DriverCard({ driver, color }: { driver: DriverStats; color: string }) {
   const summary: Stat[] = [
-    { label: "Posição", value: `${driver.position}º` },
-    { label: "Pontos", value: driver.points },
+    { label: "Position", value: ordinal(driver.position) },
+    { label: "Points", value: driver.points },
   ];
 
   const stats: Stat[] = [
-    { label: "Vitórias", value: driver.wins },
-    { label: "Pódios", value: String(driver.podiums) },
+    { label: "Wins", value: driver.wins },
+    { label: "Podiums", value: String(driver.podiums) },
     { label: "Poles", value: String(driver.poles) },
   ];
 
@@ -104,7 +117,7 @@ export default function TeamPage() {
       })
       .catch((err: unknown) => {
         if (active) {
-          setError(err instanceof Error ? err.message : "Não foi possível carregar os pilotos.");
+          setError(err instanceof Error ? err.message : "Could not load drivers.");
         }
       })
       .finally(() => {
@@ -120,12 +133,12 @@ export default function TeamPage() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-carbon px-6 text-center">
         <h1 className="font-body text-4xl font-bold text-white">404</h1>
-        <p className="font-body text-[#B7BAC1]">Não encontramos essa equipe.</p>
+        <p className="font-body text-[#B7BAC1]">We couldn't find that team.</p>
         <Link
           to="/"
           className="rounded-full bg-[#1E2025] px-4 py-2 font-body text-sm font-medium text-white transition-colors hover:bg-[#2A2D33]"
         >
-          Voltar para a página inicial
+          Back to home
         </Link>
       </main>
     );
@@ -137,7 +150,7 @@ export default function TeamPage() {
         <header className="mb-8 flex items-center justify-between gap-4">
           <Link
             to="/"
-            aria-label="Voltar para a página inicial"
+            aria-label="Back to home"
             className="rounded-md bg-[#E10600] px-3 py-1.5 font-body text-lg font-extrabold italic text-white"
           >
             F1
