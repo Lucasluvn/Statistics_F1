@@ -27,13 +27,16 @@ function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) 
   return (
     <div
       className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-[#1E2025]"
-      style={{ boxShadow: `inset 0 -6px 0 ${color}` }}
+      style={{
+        boxShadow: `inset 0 -6px 0 ${color}`,
+        backgroundImage: `radial-gradient(circle at 50% 120%, ${color}33, transparent 65%)`,
+      }}
     >
       {driver.photo && !failed ? (
         <img
           src={driver.photo}
           alt={`Photo of ${driver.name}`}
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-contain py-3"
           onError={() => setFailed(true)}
         />
       ) : (
@@ -163,7 +166,7 @@ export default function TeamPage() {
         </header>
 
         {loading ? (
-          <p className="font-body text-[#B7BAC1]">Carregando pilotos...</p>
+          <p className="font-body text-[#B7BAC1]">Loading drivers...</p>
         ) : error ? (
           <div className="flex flex-col items-start gap-4 rounded-2xl bg-[#1E2025] p-6">
             <p className="font-body text-sm text-[#B7BAC1]">{error}</p>
@@ -172,11 +175,11 @@ export default function TeamPage() {
               onClick={() => setReload((n) => n + 1)}
               className="rounded-full bg-[#E10600] px-4 py-2 font-body text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              Tentar novamente
+              Try again
             </button>
           </div>
         ) : drivers.length === 0 ? (
-          <p className="font-body text-[#B7BAC1]">Ainda não há pilotos cadastrados para esta equipe.</p>
+          <p className="font-body text-[#B7BAC1]">No drivers available for this team yet.</p>
         ) : (
           <section className="grid gap-8 md:grid-cols-2">
             {drivers.map((driver) => (
