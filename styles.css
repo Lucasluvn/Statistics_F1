@@ -1,4 +1,3 @@
-/* --- Estilos Globais --- */
 :root {
     --bg-color: #0c0e12;
     --panel-color: rgba(18, 22, 28, 0.9);
@@ -11,13 +10,11 @@
     --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.6);
     --font-family: 'Open Sans', sans-serif;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-color;
 }
-
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -28,15 +25,12 @@ body {
     min-height: 100vh;
     overflow: hidden;
 }
-
-/* --- Estrutura e Frame do Monitor --- */
 .dashboard-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-
 .monitor-frame {
     background-color: var(--panel-color);
     width: 90vw;
@@ -51,8 +45,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* --- Cabeçalho --- */
 .dashboard-header {
     display: flex;
     justify-content: space-between;
@@ -61,27 +53,22 @@ body {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 20px;
 }
-
 .logo-area .f1-logo {
-    height: 40px; /* Ajuste conforme necessário */
+    height: 40px;
     display: block;
 }
-
 .title-area h1 {
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/* --- Painel de Filtros --- */
 .filters-panel {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
-
 .filter-dropdown, .filter-btn {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
@@ -92,11 +79,9 @@ body {
     display: flex;
     align-items: center;
 }
-
 .filter-dropdown {
     padding: 10px 15px;
 }
-
 .filter-dropdown select {
     background: transparent;
     border: none;
@@ -106,17 +91,14 @@ body {
     cursor: pointer;
     margin-left: 10px;
 }
-
 .filter-dropdown select:focus {
     outline: none;
 }
-
 .filter-group {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
-
 .filter-btn {
     padding: 10px 20px;
     font-size: 14px;
@@ -124,42 +106,34 @@ body {
     font-weight: 600;
     opacity: 0.7;
 }
-
 .filter-btn:hover {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 .filter-btn i {
     margin-right: 8px;
 }
-
 .filter-btn.active {
     opacity: 1;
     border-color: var(--accent-blue);
     background-color: rgba(0, 191, 255, 0.1);
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
 }
-
 .filter-btn.active i {
     color: var(--accent-blue);
 }
-
-/* --- Conteúdo Principal e Carrossel --- */
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
 .carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
-
 .carousel-nav {
     background: transparent;
     border: none;
@@ -175,20 +149,16 @@ body {
     gap: 8px;
     padding: 15px;
 }
-
 .carousel-nav:hover {
     opacity: 1;
     transform: scale(1.05);
 }
-
 .team-cards-viewport {
     flex: 1;
     display: flex;
     justify-content: center;
-    max-width: 800px; /* Ajuste conforme necessário */
+    max-width: 800px;
 }
-
-/* --- Card da Equipe --- */
 .team-card {
     background-color: var(--card-color);
     border-radius: 15px;
@@ -196,15 +166,13 @@ body {
     box-shadow: var(--shadow-heavy);
     width: 100%;
     padding: 30px;
-    display: none; /* Inicialmente escondido, JavaScript mostrará o card atual */
+    display: none;
     transform-style: preserve-3d;
     transition: all 0.5s ease-out;
 }
-
 .team-card.current {
     display: block;
 }
-
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -213,33 +181,27 @@ body {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 15px;
 }
-
 .team-logos {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
 .team-logos img {
     height: 25px;
 }
-
 .card-header h2 {
     font-size: 20px;
     font-weight: 800;
 }
-
 .card-pilots {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
 }
-
 .pilot {
     text-align: center;
 }
-
 .pilot img {
     width: 100px;
     height: 100px;
@@ -247,31 +209,26 @@ body {
     border: 2px solid var(--accent-blue);
     margin-bottom: 10px;
 }
-
 .pilot h3 {
     font-size: 14px;
     font-weight: 700;
 }
-
 .card-stats h3 {
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
     opacity: 0.8;
 }
-
 .stat-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
-
 .stat-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .stat {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
@@ -281,21 +238,17 @@ body {
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .stat .value {
     color: var(--accent-blue);
     font-weight: 800;
     float: right;
 }
-
-/* --- Paginação --- */
 .pagination {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
 }
-
 .pagination .dot {
     width: 8px;
     height: 8px;
@@ -304,24 +257,19 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .pagination .dot:hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
-
 .pagination .dot.active {
     background-color: var(--accent-red);
     box-shadow: 0 0 8px rgba(255, 60, 60, 0.5);
 }
-
-/* --- Pequenos Detalhes e Responsividade --- */
 @media (max-width: 1024px) {
     .monitor-frame {
         width: 95vw;
         height: 95vh;
         padding: 20px;
     }
-    
     .title-area h1 {
         font-size: 20px;
     }

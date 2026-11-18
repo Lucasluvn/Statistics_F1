@@ -9,11 +9,6 @@ import car_Haas from "../assests/logo_f1/cars_f1/car_Hass.png"
 import car_KickSauber from "../assests/logo_f1/cars_f1/car_KickSauber.png"
 import car_Racing_Bulls from "../assests/logo_f1/cars_f1/car_Racing_Bulls.png"
 
-
-
-
-// criando o "dicionario" para o cars_f1.ts saber qual imagem mostrar quando selecionado
-
 export const teamCars ={
   "ferrari": carro_ferrari_f1,
   "williams": car_williams_f1,

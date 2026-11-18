@@ -6,10 +6,6 @@ interface NavArrowProps {
   onClick: () => void
 }
 
-/**
- * Botão de seta do carrossel. Ainda sem onClick — só a aparência e a
- * acessibilidade básica (aria-label) prontas pra você ligar a lógica.
- */
 export default function NavArrow({ direction, label, onClick }: NavArrowProps) {
   const Icon = direction === "prev" ? ChevronLeft : ChevronRight;
 

@@ -26,7 +26,7 @@ function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) 
 
   return (
     <div
-      className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-[#1E2025]"
+      className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-[#1E2025]"
       style={{
         boxShadow: `inset 0 -6px 0 ${color}`,
         backgroundImage: `radial-gradient(circle at 50% 120%, ${color}33, transparent 65%)`,
@@ -36,7 +36,7 @@ function DriverPhoto({ driver, color }: { driver: DriverStats; color: string }) 
         <img
           src={driver.photo}
           alt={`Photo of ${driver.name}`}
-          className="h-full w-full object-contain py-3"
+          className="h-full w-full object-contain"
           onError={() => setFailed(true)}
         />
       ) : (

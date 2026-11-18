@@ -1,9 +1,5 @@
 import { Gauge } from "lucide-react";
 
-/**
- * Cabeçalho: logo "F1 Statistics" à esquerda + título central.
- * Puramente visual — sem estado, sem lógica.
- */
 export default function Header() {
   return (
     <header className="flex flex-col gap-4 sm:flex-row sm:items-center">

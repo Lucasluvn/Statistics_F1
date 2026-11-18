@@ -1,0 +1,25 @@
+const CDN = "https://media.formula1.com/content/dam/fom-website/drivers";
+
+export const driverPhotos: Record<string, string> = {
+  norris: `${CDN}/L/LANNOR01_Lando_Norris/lannor01.png`,
+  max_verstappen: `${CDN}/M/MAXVER01_Max_Verstappen/maxver01.png`,
+  piastri: `${CDN}/O/OSCPIA01_Oscar_Piastri/oscpia01.png`,
+  russell: `${CDN}/G/GEORUS01_George_Russell/georus01.png`,
+  leclerc: `${CDN}/C/CHALEC01_Charles_Leclerc/chalec01.png`,
+  hamilton: `${CDN}/L/LEWHAM01_Lewis_Hamilton/lewham01.png`,
+  antonelli: `${CDN}/A/ANDANT01_Andrea%20Kimi_Antonelli/andant01.png`,
+  albon: `${CDN}/A/ALEALB01_Alexander_Albon/alealb01.png`,
+  sainz: `${CDN}/C/CARSAI01_Carlos_Sainz/carsai01.png`,
+  alonso: `${CDN}/F/FERALO01_Fernando_Alonso/feralo01.png`,
+  hulkenberg: `${CDN}/N/NICHUL01_Nico_Hulkenberg/nichul01.png`,
+  hadjar: `${CDN}/I/ISAHAD01_Isack_Hadjar/isahad01.png`,
+  bearman: `${CDN}/O/OLIBEA01_Oliver_Bearman/olibea01.png`,
+  lawson: `${CDN}/L/LIALAW01_Liam_Lawson/lialaw01.png`,
+  ocon: `${CDN}/E/ESTOCO01_Esteban_Ocon/estoco01.png`,
+  stroll: `${CDN}/L/LANSTR01_Lance_Stroll/lanstr01.png`,
+  tsunoda: `${CDN}/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01.png`,
+  gasly: `${CDN}/P/PIEGAS01_Pierre_Gasly/piegas01.png`,
+  bortoleto: `${CDN}/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png`,
+  colapinto: `${CDN}/F/FRACOL01_Franco_Colapinto/fracol01.png`,
+  doohan: `${CDN}/J/JACDOO01_Jack_Doohan/jacdoo01.png`,
+};

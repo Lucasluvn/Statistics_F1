@@ -1,15 +1,10 @@
 import {teamLogos} from "../data/logos"
 
-
-// Dados de exemplo (temporada 2025) — os números são ilustrativos,
-// servem só para preencher o layout. Quando o back-end estiver pronto
-// e consumindo a API externa, esses dados reais virão de lá.
-
 export interface F1Team {
   id: string;
   name: string;
   fullName: string;
-  color: string; // cor da equipe, usada na faixa lateral do card
+  color: string;
   position: number;
   points: number;
 }
@@ -37,5 +32,4 @@ export const teams: F1Team[] = [
   
 ];
 
-// Equipe exibida como exemplo estático no card principal.
-export const exampleTeam = teams[0]; // McLaren, líder de exemplo
+export const exampleTeam = teams[0];

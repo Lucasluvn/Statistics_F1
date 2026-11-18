@@ -6,12 +6,8 @@ activeId: string
 onChange: (id:string) => void
 }
 
-/**
- * Fileira de chips com as 10 equipes da temporada.*/
 export default function TeamNavChips ({activeId,onChange })  {
-  /* uma ref pra guardar os botões*/
 const chipsRefs = useRef<Record<string,HTMLButtonElement | null>>({});
-/*  Criar o useEffect (o "efeito" do título") */
 
 useEffect(() => {
   chipsRefs.current[activeId]?.scrollIntoView({
@@ -37,7 +33,6 @@ useEffect(() => {
               color: isActive ? "#0B0C0E" : "#B7BAC1",
             }}
           >
-            {/* Placeholder do logo da equipe — círculo com iniciais*/}
             <span
               className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[9px] font-bold"
               style={{
